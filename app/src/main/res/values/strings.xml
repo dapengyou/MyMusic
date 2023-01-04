@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyMusic</string>
+
+    <string name="recently">我的歌曲</string>
+    <string name="best_practice">其他信息</string>
+
+</resources>

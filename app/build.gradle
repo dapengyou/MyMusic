@@ -1,0 +1,92 @@
+//plugins {
+//    id 'com.android.application'
+//    id 'org.jetbrains.kotlin.android'
+//}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        applicationId "com.example.mymusic"
+        minSdkVersion 26
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+//    implementation (group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.11')
+
+//    implementation "javax.xml.bind:jaxb-api:2.2.11"
+//    implementation "com.sun.xml.bind:jaxb-core:2.2.11"
+//    implementation "com.sun.xml.bind:jaxb-impl:2.2.11"
+//    implementation "javax.activation:activation:1.1.1"
+//    compileOnly "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+//    compileOnly "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+
+    compileOnly 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    compileOnly 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation project(':architecture')
+    implementation 'com.kunminx.player:player:1.1.6'
+
+    compileOnly 'androidx.recyclerview:recyclerview:1.2.1'
+
+    compileOnly 'androidx.lifecycle:lifecycle-runtime:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-common-java8:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+    compileOnly 'androidx.lifecycle:lifecycle-livedata:2.2.0'
+
+    compileOnly 'androidx.navigation:navigation-runtime:2.2.1'
+
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    implementation 'com.yanzhenjie.permission:x:2.0.1'
+
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    implementation 'com.sothree.slidinguppanel:library:3.4.0'
+    implementation 'net.steamcrafted:materialiconlib:1.1.5'
+
+    // 增加KT相关内容
+    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+}
+
+repositories {
+    mavenCentral()
+}
