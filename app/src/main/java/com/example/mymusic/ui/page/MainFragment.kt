@@ -37,6 +37,8 @@ class MainFragment : Fragment() {
         mainBinding = FragmentMainBinding.bind(view)
 
         mainBinding?.click = ClickProxy() // 设置点击事件，布局就可以直接绑定
+        mainBinding ?.setVm(mainViewModel) // 设置VM，就可以实时数据变化
+
         return view
 
     }
@@ -44,6 +46,9 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mainViewModel!!.initTabAndPage.set(true)
+
+        // 触发，---> 还要加载WebView
+        mainViewModel!!.pageAssetPath.set("JetPack_WorkManager.html")
     }
 
     inner class ClickProxy {
